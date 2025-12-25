@@ -7,3 +7,4 @@ ipaddress
 jupyter
 notebook
 imbalanced-learn
+xgboost
