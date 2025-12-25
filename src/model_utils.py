@@ -50,9 +50,7 @@ def run_cross_validation(model, X, y, k=5):
     """
     skf = StratifiedKFold(n_splits=k, shuffle=True, random_state=42)
     # Note: 'average_precision' is the scoring key for AUC-PR
-    scores = cross_val_score(
-        model, X, y, cv=skf, scoring="average_precision", n_jobs=-1
-    )
+    scores = cross_val_score(model, X, y, cv=skf, scoring="average_precision", n_jobs=1)
 
     print(
         f"Cross-Validation AUC-PR (k={k}): {scores.mean():.4f} +/- {scores.std():.4f}"
